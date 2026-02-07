@@ -1,0 +1,20 @@
+[phases.setup]
+nixPkgs = [
+    "php74",
+    "php74Extensions.mysqlnd",
+    "php74Extensions.redis",
+    "php74Extensions.bcmath",
+    "php74Extensions.gd",
+    "php74Extensions.gmp",
+    "php74Extensions.dom",
+    "php74Extensions.mbstring",
+    "php74Extensions.tokenizer",
+    "php74Extensions.xml",
+    "composer"
+]
+
+[phases.build]
+cmds = [
+    "composer install --ignore-platform-reqs --no-dev",
+    "npm install"
+]
